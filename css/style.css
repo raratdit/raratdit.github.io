@@ -1,0 +1,311 @@
+#container3D canvas {
+  width: 100px;
+  /* Set the desired width */
+  height: 100px;
+  /* Set the desired height */
+  border-radius: 10px;
+  border-width: 1;
+  background-color: white;
+  /* Optional: background color */
+  /* border: 10px solid #ccc; */
+  /* Optional: border */
+  margin: 0 auto;
+  /* Center the container horizontally */
+  position: relative;
+  /* Allow for positioning if needed */
+  /* You can also adjust the position if you want it elsewhere */
+  top: 20px;
+  /* Adjust vertical position */
+}
+
+html {
+  font-family: Arial;
+  display: inline-block;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+
+body {
+  margin: 0;
+}
+
+.topnav {
+  overflow: hidden;
+  /* background-color: #003366; */
+  color: #000000;
+  font-size: 1rem;
+}
+
+.content {
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, .5);
+}
+
+.card-title {
+  color: #003366;
+  font-weight: bold;
+}
+
+.cards {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.reading {
+  font-size: 1.2rem;
+}
+
+.cube-content {
+  width: 100%;
+  background-color: white;
+  height: 300px;
+  margin: auto;
+  padding-top: 2%;
+}
+
+#reset {
+  /* border: none;
+  color: #FEFCFB;
+  background-color: #003366;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  width: 150px;
+  border-radius: 4px; */
+  display: inline-block;
+  padding: 5px 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #e57373;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Styles for the chart container */
+#accelerometerChart {
+  /* display: block; */
+  /* margin: 0 auto; */
+  /* max-width: 100%; */
+  width: 100;
+  height: 100;
+
+}
+
+
+/* Button styles */
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+hr.gradient {
+  height: 3px;
+  border: none;
+  border-radius: 6px;
+  /* padding: 10%; */
+  margin: 5%;
+  background: linear-gradient(90deg,
+      rgba(13, 8, 96, 1) 0%,
+      rgba(9, 9, 121, 1) 11%,
+      rgba(6, 84, 170, 1) 31%,
+      rgba(0, 255, 113, 1) 100%);
+}
+
+
+.divider {
+  height: 1px;
+  /* Height of the divider */
+  background-color: #000;
+
+  /* Color of the divider */
+  margin: 20px 0;
+  /* Space around the divider */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+  min-width: 400px;
+  /* Mengatur lebar minimum kolom untuk perangkat kecil */
+  max-width: 50%;
+  box-sizing: border-box;
+  /* background: #000; */
+  align-items: center;
+  /* Tengah horizontal */
+  justify-content: center;
+  /* Tengah vertikal */
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.sensor-group {
+  margin-bottom: 20px;
+}
+
+.sensor {
+  display: inline-block;
+  width: 80px;
+  background-color: #eee;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.label-gyro,
+.label-acce {
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.label-gyro {
+  background-color: #90ee90;
+  /* Warna hijau muda */
+}
+
+.label-acce {
+  background-color: #9CFFE6;
+  /* Warna hijau muda */
+}
+
+.value {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+#reset:hover {
+  background-color: #e57373;
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .column {
+    max-width: 100%;
+  }
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////// */
+body {
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.mdc-data-table {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.mdc-data-table__header-cell {
+  background-color: #6200ea;
+  color: white;
+}
+
+.mdc-data-table__row:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.pagination button,
+#download-btn {
+  margin: 0 5px;
+  padding: 10px 15px;
+  align-items: center;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  /* Mengatur konten agar rata tengah secara horizontal */
+  align-items: center;
+  /* Mengatur konten agar rata tengah secara vertikal */
+  height: 5vh;
+  /* Menggunakan seluruh tinggi viewport */
+}
+
+.pagination button[disabled],
+#download-btn[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#download-btn {
+  margin-top: 20px;
+}
+
+.page-number {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.page-number.active {
+  font-weight: bold;
+}
