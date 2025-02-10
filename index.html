@@ -1,132 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <title>Ship Movement</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/107/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
-  <link rel="stylesheet" href="/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index - Data Insights</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-  <div class="topnav">
-    <h1> Ship Movement </h1>
-  </div>
-  <pre id="data"></pre>
-  <div class="container">
-    <div class="row">
-      <div class="column">
-        <!-- <h2>3D Model</h2> -->
-        <div id="container3D"></div>
+  <header class="bg-white shadow-md p-4 flex justify-between items-center">
+    <!-- <div class="flex items-center">
+      <img src="logo.png" alt="Index Logo" class="h-8 w-8 mr-2">
+      <span class="text-lg font-semibold">Index</span>
+    </div> -->
+    <!-- <nav class="hidden md:flex space-x-6 text-gray-600">
+      <a href="#" class="hover:text-black">Blog</a>
+      <a href="#" class="hover:text-black">Contact</a>
+    </nav> -->
+  </header>
 
-      </div>
-
-      <div class="column">
-        <div class="sensor-group">
-          <h3>Gyroscope ( angle )</h3>
-          <div class="sensor">
-            <div class="label-gyro">X</div>
-            <div class="value"><span id="gyroX"></span></div>
-          </div>
-          <div class="sensor">
-            <div class="label-gyro">Y</div>
-            <div class="value"><span id="gyroY"></span></div>
-          </div>
-          <div class="sensor">
-            <div class="label-gyro">Z</div>
-            <div class="value"><span id="gyroZ"></span></div>
-          </div>
-        </div>
-
-        <div class="sensor-group">
-          <h3>Accelerometer ( ms<sup>2</sup> )</h3>
-          <div class="sensor">
-            <div class="label-acce">X</div>
-            <div class="value"><span id="accX"></span></div>
-          </div>
-          <div class="sensor">
-            <div class="label-acce">Y</div>
-            <div class="value"><span id="accY"></span></div>
-          </div>
-          <div class="sensor">
-            <div class="label-acce">Z</div>
-            <div class="value"><span id="accZ"></span></div>
-          </div>
-        </div>
-        <!-- <a href="#" class="reset-button">Reset</a> -->
-        <button id="reset" onclick="resetPosition(this)">RESET POSITION</button>
-      </div>
+  <main class="text-center py-20 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-5xl font-bold mt-4">
+        Tri <span class="text-orange-500">Radit</span>ya Inawityanto
+      </h1>
+      <p class="text-gray-600 mt-4">IoT Developer, Flutter Developer, Data Engineer</p>
+      <button class="mt-6 px-6 py-3 bg-black text-white rounded-lg">Chat to Me</button>
     </div>
-
-
-
-  </div>
-
-  <!-- <div class="divider"></div> -->
-  <hr class="gradient">
-
-  <canvas id="accelerometerChart"></canvas>
-
-  <hr class="gradient">
-
-
-
-
-  <div class="mdc-data-table">
-    <table class="mdc-data-table__table" aria-label="Data table with pagination">
-      <thead>
-        <tr class="mdc-data-table__header-row">
-          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">No</th>
-          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Timestamp</th>
-          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Acc X </th>
-          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Acc Y </th>
-          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Acc Z </th>
-          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Gyro X </th>
-          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Gyro Y </th>
-          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Gyro Z </th>
-        </tr>
-      </thead>
-      <tbody class="mdc-data-table__content" id="data-table-body">
-        <!-- Data rows will be inserted here by JavaScript -->
-      </tbody>
-    </table>
-  </div>
-
-  <div class="pagination" id="pagination">
-    <button id="first-btn" aria-label="First Page">&lt;&lt;</button>
-    <button id="prev-btn" aria-label="Previous Page">&lt;</button>
-    <!-- Page numbers will be inserted here by JavaScript -->
-    <button id="next-btn" aria-label="Next Page">&gt;</button>
-    <button id="last-btn" aria-label="Last Page">&gt;&gt;</button>
-  </div>
-
-  <div class="center-container">
-    <button id="download-btn">Download Data</button>
-  </div>
-  <!-- Include MDC JavaScript library -->
-  <script type="module" src="/js/main.js"></script>
-  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-  <script>
-
-    function resetPosition(element) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "/" + element.id, true);
-      console.log(element.id);
-      xhr.send();
-    }
-
-
-  </script>
+  </main>
 </body>
 
 </html>
